@@ -1,13 +1,15 @@
 {
   "name": "code-solutions",
   "version": "1.0.0",
+  "type": "module",
+  "main": "server.js",
   "private": true,
   "description": "Code exercise solutions.",
   "scripts": {
-    "prepare": "husky install"
+    "hello": "echo Hello, LearningFuze"
   },
   "devDependencies": {
-    "eslint": "^8.38.0",
+    "eslint": "^8.48.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-html": "^7.1.0",
@@ -23,5 +25,8 @@
     "stylelint": "^15.4.0",
     "stylelint-config-recommended": "^11.0.0",
     "stylelint-config-standard": "^32.0.0"
+  },
+  "dependencies": {
+    "jquery": "^3.7.1"
   }
 }
