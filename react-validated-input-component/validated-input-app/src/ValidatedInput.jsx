@@ -5,17 +5,17 @@ import { HiCheck } from 'react-icons/hi';
 export default function ValidatedInput() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('A password is required');
-  const [validation, setValidation] = useState(HiX);
+  const [validation, setValidation] = useState(false);
 
   function handlePassword(event) {
     console.log('password: ', { password });
     setPassword(event.target.value);
     if (!event.target.value) {
       setError('A password is required');
-      setValidation(HiX);
+      setValidation(false);
     } else if (event.target.value.length < 8) {
       setError('Your password is too short');
-      setValidation(HiX);
+      setValidation(true);
     } else {
       setError('');
       setValidation(HiCheck);
@@ -26,7 +26,9 @@ export default function ValidatedInput() {
       <label>
         Password:
         <input type="password" value={password} onChange={handlePassword} />
-        <span>{validation}</span>
+        <span style={{ color: validation ? 'green' : 'red' }}>
+          {validation ? <HiCheck /> : <HiX />}
+        </span>
       </label>
       <p>{error}</p>
       <button>Submit</button>
