@@ -19,7 +19,7 @@ const strings = [
 
 function App() {
   return (
-    <main>
+    <main className="container">
       <SearchableList strings={strings} />
     </main>
   );

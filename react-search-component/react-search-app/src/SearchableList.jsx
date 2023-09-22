@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import SearchBar from './SearchBar';
-import StringList from './StringList';
+import ListItem from './ListItem';
 
 export default function SearchableList({ strings }) {
   const [search, setSearch] = useState('');
@@ -14,7 +14,7 @@ export default function SearchableList({ strings }) {
       <ul>
         {filtered.length > 0 ? (
           filtered.map((string, index) => (
-            <StringList key={index} string={string} />
+            <ListItem key={index} string={string} />
           ))
         ) : (
           <p>No items match the filter</p>
